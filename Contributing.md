@@ -12,7 +12,7 @@ For the recruitment process, please follow the below steps to solve the assignme
 -  Open [Solution.js](https://github.com/symblai/Github-Externship-Assignment/blob/main/Solution.js) file and implement and test your solution locally.
 -  Once tested, commit the solution and raise a PR against `main` branch of [base](https://github.com/symblai/Github-Externship-Assignment) repository.
 
-
+> **Note:** _Your submissions will be checked for plagiarism._
 ## Developers Guide
 This developer guide should be able to help you understand the steps on contributing effectively to this assignment. If you are new to the Git workflow process read the guide carefully.
 
