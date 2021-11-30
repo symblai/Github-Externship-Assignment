@@ -1,24 +1,22 @@
 # Contributing
 
-Hi there! We're thrilled that you'd like to contribute to Github Externship Programme by Symbl.ai.
+Hi there! We're thrilled to have you contribute to our Symbl repository.
 
 
-## Github Externship Assignment
+## Symbl.ai Github Externship Assignment
 
-Please follow the below steps to solve the assignment. 
+For the recruitment process, please follow the below steps to solve the assignment. 
 
 -  Read the [problem statement](https://github.com/symblai/Github-Externship-Assignment/blob/main/README.md) carefully.
 -  Follow the [developers guide](#developers-guide) to setup the repository on your machine.
--  Open [Solution.js](https://github.com/symblai/Github-Externship-Assignment/blob/main/Solution.js) file and implement your solution.
--  Test your solution locally.
+-  Open [Solution.js](https://github.com/symblai/Github-Externship-Assignment/blob/main/Solution.js) file and implement and test your solution locally.
 -  Once tested, commit the solution and raise a PR against `main` branch of [base](https://github.com/symblai/Github-Externship-Assignment) repository.
 
 
 ## Developers Guide
+This developer guide should be able to help you understand the steps on contributing effectively to this assignment. If you are new to the Git workflow process read the guide carefully.
 
-This process here should be able to guide you on how to contribute effectively to this project, follow the steps below. You should not be new to the git workflow process however if you still are, the guide should still be able to help you through the process.
-
-> Please before you push your codes to the repository make sure you pull from the repository, so the changes that have been made can be reflected on your local machine, for us to avoid merge conflicts use the git command line
+> Before you push your codes to the repository, please ensure you pull from the repository to avoid merge conflicts. 
 
     git pull upstream main
 
@@ -120,7 +118,7 @@ Are there side effects or other unintuitive consequenses of this change? Here's 
   See also: #456, #789
   And if your commit is just a simple thing, then make the message very short, but not just a title
 
-### Happy hacking!!!!
+### Have fun coding!! :)
 
 ## Resources
 
