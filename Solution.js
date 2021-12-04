@@ -4,7 +4,6 @@ function replaceAt(str,index, character) {
 };
 
 class FixEquation{
-    
     findMissingDigit(equation){
         let params=equation.split(" ");
         let [a,b,c,d] = [params[0],params[2],params[4],params[6]];
