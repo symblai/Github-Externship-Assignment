@@ -1,5 +1,5 @@
 class FixEquation {
-
+        
     /**
      * 
      * This is an helper function determines index of the missing number in given equation
