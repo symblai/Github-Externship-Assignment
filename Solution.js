@@ -59,3 +59,5 @@ const findMissingDigit = (equation) => {
 
 //Provide equation as a string to the function and console log the output
 console.log(findMissingDigit("42 * ?7 + 2 = 1976"));
+
+//Link to the program: https://onecompiler.com/nodejs/3xke6jw4c
