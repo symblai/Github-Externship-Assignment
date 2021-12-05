@@ -16,7 +16,7 @@ const findMissingDigit = (equation) => {
   const equation2 = equation.replace(/ /g, "");
   //Split the equation string into an array of individual characters
   const s1 = equation2.split("");
-  //Now split the array into two arrays, one array for characters before the "=" and one for after the "="
+  //Now split the array into two strings, one string for characters before the "=" and one for after the "="
   let e2 = s1.slice(0, s1.indexOf("=")).join("");
   let e3 = s1.slice(s1.indexOf("=") + 1, s1.length).join("");
 
