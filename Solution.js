@@ -75,7 +75,6 @@ for (let i = 0; i < Equations.length; ++i) {
   console.log(X.findMissingDigit(Equations[i]));
 }
 
-
 // Output:
 // 9
 // 2
