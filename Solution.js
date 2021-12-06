@@ -1,6 +1,6 @@
 // Write your code here
-class repairEquation{
-    missingDigit(eq) {
+class fixEquation{
+    findMissingDigit(eq) {
 
         // equation is in the form of A * B + C = D
 
@@ -91,13 +91,13 @@ class repairEquation{
     }
 }
 
-const solve = new repairEquation();
+const solve = new fixEquation();
 
-solve.missingDigit("42 * 47 + 2 = ?976");     // output will be 1
-solve.missingDigit("?2 * 47 + 2 = 1976");     // output will be 4
-solve.missingDigit("4? * 47 + 2 = 1976");     // output will be 2
-solve.missingDigit("42 * ?7 + 2 = 1976");     // output will be 4
-solve.missingDigit("42 * 4? + 2 = 1976");     // output will be 7
-solve.missingDigit("42 * 47 + ? = 1976");     // output will be 2
-solve.missingDigit("42 * 47 + 2? = 1976");    // output will be -1
-solve.missingDigit("42 * ?47 + 2 = 1976");    // output will be -1
+solve.findMissingDigit("42 * 47 + 2 = ?976");     // output will be 1
+solve.findMissingDigit("?2 * 47 + 2 = 1976");     // output will be 4
+solve.findMissingDigit("4? * 47 + 2 = 1976");     // output will be 2
+solve.findMissingDigit("42 * ?7 + 2 = 1976");     // output will be 4
+solve.findMissingDigit("42 * 4? + 2 = 1976");     // output will be 7
+solve.findMissingDigit("42 * 47 + ? = 1976");     // output will be 2
+solve.findMissingDigit("42 * 47 + 2? = 1976");    // output will be -1
+solve.findMissingDigit("42 * ?47 + 2 = 1976");    // output will be -1
