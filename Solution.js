@@ -1,21 +1,23 @@
 
 class FixEquation {
-	equation = ""
+	equation = "" // class member which holds the whole equation
 
-	lhs = ""
-	rhs = ""
+	lhs = "" // lhs of the equation
+	rhs = "" // rhs of the equation
 
-	values = {
+	values = { // contains all the String values of the terminals
 		A: "",
 		B: "",
 		C: "",
 		D: ""
 	}
 
+	// function to split equation at the equal ('=') mark, returns void
 	splitAtEqual = () => {
 		[this.lhs, this.rhs] = this.equation.split("=").map(item => item.trim())
 	}
 
+	// function to assign 'values' class member all the values, returns void
 	assignValues = () => {
 		const D = this.rhs
 		const [A, restAfterA] = this.lhs.split("*").map(item => item.trim())
@@ -24,6 +26,7 @@ class FixEquation {
 		this.values = { ...values }
 	}
 
+	// evaluate the missing digit in A, returns integer
 	evaluateA = () => {
 		const [tempA, B, C, D] = Object.values(this.values).map(item => parseInt(item))
 		const solvedExpn = (D - C) / B
@@ -39,6 +42,7 @@ class FixEquation {
 
 	}
 
+	// evaluate the missing digit in B, returns integer
 	evaluateB = () => {
 		const [A, tempB, C, D] = Object.values(this.values).map(item => parseInt(item))
 		const solvedExpn = (D - C) / A
@@ -54,6 +58,7 @@ class FixEquation {
 
 	}
 
+	// evaluate the missing digit in C, returns integer
 	evaluateC = () => {
 		const [A, B, tempC, D] = Object.values(this.values).map(item => parseInt(item))
 		const solvedExpn = D - A * B
@@ -66,6 +71,7 @@ class FixEquation {
 
 	}
 
+	// evaluate the missing digit in D, returns integer
 	evaluateD = () => {
 		const [A, B, C, tempD] = Object.values(this.values).map(item => parseInt(item))
 		const solvedExpn = A * B + C
@@ -78,10 +84,11 @@ class FixEquation {
 
 	}
 
+	// function which will be called with the equation
 	findMissingDigit = (equation) => {
-		this.equation = equation
-		this.splitAtEqual()
-		this.assignValues()
+		this.equation = equation // store equation in class member
+		this.splitAtEqual() // invoke splitAtEqual
+		this.assignValues() // invode assignValues
 		const { A, B, C, D } = this.values
 		if (A.includes('?')) {
 			return this.evaluateA()
