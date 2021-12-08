@@ -18,7 +18,7 @@ class FixEquation {
     */
     findMissingDigit(equation) {
 
-        // edge case for trailing 0 handle 
+        // edge case for leading 0 handle 
         this.cpy = equation.replace("?", "");
         // console.log(this.cpy);
         let nums = this.cpy.match(/\d+/g);
