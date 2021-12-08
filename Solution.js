@@ -106,6 +106,20 @@ class FixEquation {
 	}
 }
 
-const solver = new FixEquation()
+const testEquations = [
+	"42 * 47 + 2 = 1?76",
+	"4? * 47 + 2 = 1976",
+	"42 * ?7 + 2 = 1976",
+	"42 * ?47 + 2 = 1976",
+	"2 * 12? + 2 = 247"
+]
 
-console.log(solver.findMissingDigit("2 * 12? + 2 = 247"))
+const test = (testEquations) => {
+	testEquations.map((equation, index) => {
+		let solver = new FixEquation()
+		let result = solver.findMissingDigit(equation)
+		console.log(`Test : ${index}\n\tEquation: ${equation}\n\tResult: ${result}\n`)
+	})
+}
+
+// test(testEquations)
