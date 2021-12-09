@@ -1,6 +1,13 @@
 // Write your code here
 
 
+// ### Constraints
+// - Equation will have the form `A * B + C = D`.
+// - Each of A, B, C, D will be a nonempty string of 1 to 4 characters, i.e., `1 <= length of A, B, C, D <= 4`.
+// - Each character in each of A, B, C, D will be either a digit ('0'-'9') or a question mark ('?').
+// - There will be exactly one question mark in equation.
+// - The numbers represented by A, B, C, D will not have leading zeros.
+
 class FixEquation{
     findMissingDigit(equation){
         if(equation){
