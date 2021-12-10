@@ -13,6 +13,9 @@ class FixEquation {
         if (!list && list.length<4) {
             return -1;
         }
+
+        let outputString ,originalString;
+
         if (D.includes('?')) {
             let a = parseInt(A);
             let b = parseInt(B);
@@ -66,3 +69,31 @@ class FixEquation {
 
 }
 
+
+    const Main = () => {
+        let solution = new FixEquation();
+        const testcase = [
+            '42 * 47 + 2 = 1?76',
+            '4? * 47 + 2 = 1976',
+            '42 * ?7 + 2 = 1976',
+            '42 * ?47 + 2 = 1976',
+            '2 * 12? + 2 = 247',
+        ];
+    
+        testcase.forEach((testcase, pos) => {
+            const answer = solution.findMissingDigit(testcase);
+            if (answer === -1) {
+                console.log(`Test Case ${pos} :
+                    Equation : ${testcase}
+                    Returns: -1
+                    No solution for the given equation exists, returned -1\n`);
+            } else {
+                console.log(`Test Case ${pos} :
+                    Equation : ${testcase}
+                    Returns: ${answer}
+                    Missing digit is : ${answer}\n`);
+            }
+        });
+    };
+    
+    Main();
