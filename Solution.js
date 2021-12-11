@@ -55,12 +55,11 @@ class FixEquation {
         if(A.indexOf("?") != -1){
         	return this.case1(A,B,C,D);
         }
-       
+        
         //If B contains "?", find required digit.
         if(B.indexOf("?") != -1){
         	return this.case1(B,A,C,D);
         }
-       
         //If C contains "?", find required digit.
         if(C.indexOf("?") != -1){
             return this.case2(A,B,C,D);
@@ -87,10 +86,26 @@ const testcases = [
     //possible cases when C has '?'
     "42 * 47 + 19?4 = 3948", //D-A*B >0 and digit possible
     "43 * 47 + 4? = 1974", //D-A*B <=0 and digit not possible
-    "42 * 47 + 19?5 = 3948", //D-A*B >0 and digit not possible
+    "42 * 47 + 19?5 = 3948", //D-A*B >0 but digit not possible
     
     // possible cases when D has '?'
     "42 * 47 + 2 = 197?",//digit possible
     "42 * 47 + 2 = 196?",//digit not possible
 ]
 testcases.forEach(testcase => console.log(Fix.findMissingDigit(testcase)));
+
+/*OUTPUT
+2
+-1
+-1
+-1
+2
+-1
+-1
+-1
+7
+-1
+-1
+6
+-1
+*/
