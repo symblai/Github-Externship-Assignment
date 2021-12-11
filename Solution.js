@@ -19,7 +19,7 @@ class FixEquation {
       } else {
         let ind = eqStr[0].search("[?]");
         let ans = a.toString();
-        return ans[ind];
+        return parseInt(ans[ind]);
       }
     } else if (eqStr[2].search("[?]") !== -1) {
       let a, c, d;
@@ -32,7 +32,7 @@ class FixEquation {
       } else {
         let ind = eqStr[2].search("[?]");
         let ans = b.toString();
-        return ans[ind];
+        return parseInt(ans[ind]);
       }
     } else if (eqStr[4].search("[?]") !== -1) {
       let a, b, d;
@@ -46,7 +46,7 @@ class FixEquation {
       } else {
         let ind = eqStr[4].search("[?]");
         let ans = c.toString();
-        return ans[ind];
+        return parseInt(ans[ind]);
       }
     } else {
       let a, b, c;
@@ -60,7 +60,7 @@ class FixEquation {
       } else {
         let ind = eqStr[6].search("[?]");
         let ans = d.toString();
-        return ans[ind];
+        return parseInt(ans[ind]);
       }
     }
     return 0;
