@@ -41,17 +41,21 @@ class FixEquation {
          if (str.includes('?')) {
             let theoreticalValue = this.calcValue(i)
 
-            if (
-               !Number.isInteger(theoreticalValue) ||
-               theoreticalValue.toString().length != str.length
-            ) {
+            let calcStr = theoreticalValue.toString()
+
+            if (calcStr.length != str.length) {
                return -1
+            }
+
+            for (let j = 0; j < calcStr.length; j++) {
+               if (calcStr[j] != str[j] && str[j] != '?') {
+                  return -1
+               }
             }
 
             this.#nums[i] = theoreticalValue
 
-            // converts theoreticalValue to string, and returns the digit in place of '?'
-            return parseInt(theoreticalValue.toString()[str.indexOf('?')])
+            return parseInt(calcStr[str.indexOf('?')])
          }
       }
 
@@ -65,6 +69,8 @@ let testCases = [
    '42 * ?7 + 2 = 1976',
    '42 * ?47 + 2 = 1976',
    '2 * 12? + 2 = 247',
+   // both the given variable with '?' and theoretical value are of the same length but a digit was replaced in the variable, so it should return -1
+   '42 * 47 + 2 = 39?6',
 ]
 
 let solution = new FixEquation()
