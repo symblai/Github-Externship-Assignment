@@ -76,26 +76,40 @@ class FixEquation {
     }
 
     // Function to compare two numbers and find the missing digit, if exists
-    compareNumbers(actualNumber, missingNumber) {
-        actualNumber = actualNumber.trim()  // removing trailing spaces
+    compareNumbers(number, actualNumber) {
+        number = number.trim()  // removing trailing spaces
 
         // numbers must be of same length
-        if (actualNumber.length !== missingNumber.length) {
+        if (number.length !== actualNumber.length) {
             return -1
         }
-        let missingDigit = -1
-        let idx = actualNumber.indexOf('?')
-        missingDigit = missingNumber.charAt(idx)
 
+        let missingDigit = -1
+        let idx = number.indexOf('?')
+        missingDigit = actualNumber.charAt(idx) // finding the missing digit
+
+        number = number.replace("?", missingDigit) // replacing the missing digit in number
+        if (number !== actualNumber) {  // if the numbers are not same, then it means they differ by at least a digit, hence no solution
+            return -1;
+        }
         return parseInt(missingDigit)
     }
 }
 
 let FixEquationObj = new FixEquation() // creating an object
-let testcases = ["42 * 47 + 2 = 1?76", "4? * 47 + 2 = 1976", "42 * ?7 + 2 = 1976", "42 * ?47 + 2 = 1976", "2 * 12? + 2 = 247"]
+let sample_testcases = ["42 * 47 + 2 = 1?76", "4? * 47 + 2 = 1976", "42 * ?7 + 2 = 1976", "42 * ?47 + 2 = 1976", "2 * 12? + 2 = 247"]
 
-// testing against all testcases
-testcases.map(testcase => {
+// testing against all sample testcases
+console.log("======= Sample Tests ==========")
+sample_testcases.map(testcase => {
+    console.log(testcase)
+    console.log(FixEquationObj.findMissingDigit(testcase))
+    console.log()
+})
+
+let extra_testcases = ["42 * 47 + 2 = 1?73", "? * 47 + 2 = 1976", "42 * ?756 + 2 = 1976", "42 * ?4 + 2 = 1976", "2 * 62? + 2 = 247"]
+console.log("======= Extra Tests ==========")
+extra_testcases.map(testcase => {
     console.log(testcase)
     console.log(FixEquationObj.findMissingDigit(testcase))
     console.log()
