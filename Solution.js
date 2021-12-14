@@ -6,7 +6,8 @@ class FixEquation{
         let ans;
         for(let i=0;i<a.length;i++){
             if(a[i] == "?"){
-                ans = b[i];
+                if ("0123456789".includes(b[i])) ans = b[i];
+                else return -1;
             }
             else if(a[i] != b[i]){
                 return -1;
