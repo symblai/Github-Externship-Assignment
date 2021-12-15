@@ -1,0 +1,16 @@
+{
+  "name": "github-externship-assignment",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "You are given a String equation containing an equation of the form `A * B + C = D`, where A, B, C and D are positive integers that don't have leading zeros. \\\r One digit in the equation is missing. \\\r Determine and return the correct digit. \\\r If the missing digit cannot be determined (i.e., there is no solution or there is more than one solution), return `-1` instead.",
+  "main": "solution.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^27.4.5"
+  }
+}
