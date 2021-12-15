@@ -1,6 +1,8 @@
-class FixEquation {
+module.exports = class FixEquation {
   /**
    * Returns the expected number in place of marked symbol(?) when compared between MarkedStringValue and NumericValue
+   * MarkedStringValue - Value with marker(?)
+   * Numeric Value - Actual Value
    * @param {String} MarkedStringValue
    * @param {Number} NumericValue
    * @return {Number}
@@ -15,7 +17,7 @@ class FixEquation {
       MarkedStringValue.substring(0, idx) +
       ans +
       MarkedStringValue.substring(idx + 1);
-    return stringAfterSubstitution === `${NumericValue}` ? ans : -1;
+    return stringAfterSubstitution === `${NumericValue}` ? +ans : -1;
   }
 
   /**
@@ -31,7 +33,8 @@ class FixEquation {
     B = B.trim();
     C = C.trim();
     D = D.trim();
-    //checks if A is not a number. eg: for non integer value +A gives NAN as output, which on negating gives true as output. This checks if the value contains marker symbol(?)
+    //checks if A is not a number. eg: for non integer value +A gives NAN as output, which on negating gives true as output.
+    // This checks if the value contains marker symbol(?)
     if (!+A) {
       let numericA = (D - C) / B;
       return this.findMarkerValue(A, numericA);
@@ -46,4 +49,4 @@ class FixEquation {
       return this.findMarkerValue(D, numericD);
     }
   }
-}
+};
