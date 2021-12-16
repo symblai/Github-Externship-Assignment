@@ -1,3 +1,9 @@
+// Problem statement: 
+// You are given a String equation containing an equation of the form A * B + C = D, where A, B, C and D are positive integers that don't have leading zeros.
+// One digit in the equation is missing.
+// Determine and return the correct digit.
+// If the missing digit cannot be determined (i.e., there is no solution or there is more than one solution), return -1 instead.
+
 // Write code here
 
 // Function to check whether a number is float or not
