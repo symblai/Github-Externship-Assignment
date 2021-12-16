@@ -55,7 +55,7 @@ class FixEquation {
             ans = (A * B) + C;
         }
 
-        // If the '?' is present at index 0 of the number, then replacing '?' has no effect, therefore we return -1
+        // If the '?' is a leading 0, then replacing '?' has no effect, therefore we return -1
         let ans_str = '';
         ans_str = ans.toString();
         if(ans_str == characters[questMarkPos].replace('?', '')) {
