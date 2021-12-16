@@ -4,11 +4,9 @@
 // Method signature : function findMissingDigit(equation)
 
 class FixEquation {
-
     findMissingDigit(equation) {
-
+        
         // Get the input and split equation into tokens
-
         let tokens = equation.split(" ");
         let missing = -1;
         let digits = [];
