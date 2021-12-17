@@ -40,7 +40,7 @@ class FixEquation{
                 break;
             case 6:
                 ans = (A * B + C);
-                console.log(ans);
+                
                 
         }
         //if the answer is negative or not an integer, its not in the boundaries of our solution, so return -1
