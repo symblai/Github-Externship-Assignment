@@ -100,4 +100,8 @@ Two times something + 2 will never be 247, so this test case has no solution eit
 *Step 5: Parse the number with missing digit*
 - Simply traverse the number string and return the int data type of that character corresponding to the question mark
 
+## Testing given test cases:
+![Screenshot (417)](https://user-images.githubusercontent.com/64865136/146568886-f42a5741-4071-47b5-b68d-8f223f4dbe3f.png)
 
+## Testing cases where other digits mismatch:
+![Screenshot (416)](https://user-images.githubusercontent.com/64865136/146568957-fc0ccd9b-dc6b-4f0f-b978-03d18e5f2d4e.png)
