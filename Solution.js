@@ -54,7 +54,6 @@ class FixEquation {
 				res = value.length === d.length ? value[d.indexOf('?')] : -1;
 				break;
 		}
-        
 		return parseInt(res);
 	}
 }
