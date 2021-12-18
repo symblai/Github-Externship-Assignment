@@ -1,10 +1,10 @@
 /* Appraoch-
     1)Firstly find position of '?' i.e. whether ? is in first number , second, third or fourth
     2)Now try four cases accoding to possible postions of '?'. 
-        if('?' is in A then our needed A should be (D-C)/B and then compare this with the string of A given in Q and return the needed digit)
-        if('?' is in B then our needed B should be (D-C)/A and then compare this with the string of A given in Q and return the needed digit)
-        if('?' is in C then our needed C should be D-(A*B) and then compare this with the string of A given in Q and return the needed digit)
-        if('?' is in D then our needed D should be A*B+C and then compare this with the string of A given in Q and return the needed digit)
+        if'?' is in A then our needed A should be (D-C)/B and then compare this with the string of A given in Q and return the needed digit
+        if'?' is in B then our needed B should be (D-C)/A and then compare this with the string of A given in Q and return the needed digit
+        if'?' is in C then our needed C should be D-(A*B) and then compare this with the string of A given in Q and return the needed digit
+        if'?' is in D then our needed D should be A*B+C and then compare this with the string of A given in Q and return the needed digit
 
 */
 
