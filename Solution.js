@@ -59,8 +59,8 @@ class FixEquation{
 
 
 
-    var in_quetion;
-    for(var i=0;i<A_length;i++)
+    var in_quetion;                  //we will store in which string question mark is present like from A,B,C,D in which string ? is present
+    for(var i=0;i<A_length;i++)     //for checking if ? is present in A string
     {
         if(A[i]=='?')
         {
@@ -68,7 +68,7 @@ class FixEquation{
             break;
         }
     }
-    for(var i=0;i<B_length;i++)
+    for(var i=0;i<B_length;i++)    //for checking if ? is present in B string
     {
         if(B[i]=='?')
         {
@@ -76,7 +76,7 @@ class FixEquation{
             break;
         }
     }
-    for(var i=0;i<C_length;i++)
+    for(var i=0;i<C_length;i++)    //for checking if ? is present in C string
     {
         if(C[i]=='?')
         {
@@ -84,7 +84,7 @@ class FixEquation{
             break;
         }
     }
-    for(var i=0;i<D_length;i++)
+    for(var i=0;i<D_length;i++)    //for checking if ? is present in D string
     {
         if(D[i]=='?')
         {
@@ -97,26 +97,26 @@ class FixEquation{
 
 
 
-    if(in_quetion=='A')
+    if(in_quetion=='A')                          //if ? is present in A string
     {
         var B_int=0;
         var C_int=0;
         var D_int=0;
 
-        for(var i=0;i<B.length;i++)
+        for(var i=0;i<B.length;i++)                //for converting string B to number
         {
             B_int=(B_int*10)+(B[i]-'0');
         }
-        for(var i=0;i<C.length;i++)
+        for(var i=0;i<C.length;i++)                //for converting string C to number
         {
             C_int=(C_int*10)+(C[i]-'0');
         }
-        for(var i=0;i<D.length;i++)
+        for(var i=0;i<D.length;i++)                //for converting string D to number
         {
             D_int=(D_int*10)+(D[i]-'0');
         }
 
-        if(((D_int-C_int)%B_int)!=0)
+        if(((D_int-C_int)%B_int)!=0)              //if evalalution is not getting divided then return -1
         {
             return(-1);
         }
@@ -129,34 +129,58 @@ class FixEquation{
             return(-1);
         }
 
+        var index;
+        var strings_equal=true;
         for(var i=0;i<A.length;i++)
         {
+          if(A[i]!=ans1[i])
+          {
             if(A[i]=='?')
             {
-                return(ans1[i]-'0');
+              index=i;
             }
+            else
+            {
+              strings_equal=false;
+              break;
+            }
+          }
+
+        }
+        if(strings_equal==true)
+        {
+          for(var i=0;i<=index;i++)
+          {
+            if(i==index)
+            {
+              return(ans1[i]-'0');
+            }
+          }
+        }
+        else{
+          return(-1);
         }
     }
-    else if(in_quetion=='B')
+    else if(in_quetion=='B')           //if ? is present in B string
     {
         var A_int=0;
         var C_int=0;
         var D_int=0;
 
-        for(var i=0;i<A.length;i++)
+        for(var i=0;i<A.length;i++)      //for converting string A to number
         {
             A_int=(A_int*10)+(A[i]-'0');
         }
-        for(var i=0;i<C.length;i++)
+        for(var i=0;i<C.length;i++)     //for converting string C to number
         {
             C_int=(C_int*10)+(C[i]-'0');
         }
-        for(var i=0;i<D.length;i++)
+        for(var i=0;i<D.length;i++)      //for converting string D to number
         {
             D_int=(D_int*10)+(D[i]-'0');
         }
 
-        if(((D_int-C_int)%A_int)!=0)
+        if(((D_int-C_int)%A_int)!=0)    //if evalalution is not getting divided then return -1
         {
             return(-1);
         }
@@ -169,34 +193,58 @@ class FixEquation{
             return(-1);
         }
 
+        var index;
+        var strings_equal=true;
         for(var i=0;i<B.length;i++)
         {
+          if(B[i]!=ans1[i])
+          {
             if(B[i]=='?')
             {
-                return(ans1[i]-'0');
+              index=i;
             }
+            else
+            {
+              strings_equal=false;
+              break;
+            }
+          }
+
+        }
+        if(strings_equal==true)
+        {
+          for(var i=0;i<=index;i++)
+          {
+            if(i==index)
+            {
+              return(ans1[i]-'0');
+            }
+          }
+        }
+        else{
+          return(-1);
         }
     }
-    else if(in_quetion=='C')
+    else if(in_quetion=='C')            //if ? is present in C string
     {
         var A_int=0;
         var B_int=0;
         var D_int=0;
 
-        for(var i=0;i<A.length;i++)
+        for(var i=0;i<A.length;i++)   //for converting string A to number
         {
             A_int=(A_int*10)+(A[i]-'0');
         }
-        for(var i=0;i<B.length;i++)
+        for(var i=0;i<B.length;i++) //for converting string B to number
         {
             B_int=(B_int*10)+(B[i]-'0');
         }
-        for(var i=0;i<D.length;i++)
+        for(var i=0;i<D.length;i++)   //for converting string D to number
         {
             D_int=(D_int*10)+(D[i]-'0');
         }
 
-        if(D_int%(A_int*B_int)!=0)
+        if(D_int%(A_int*B_int)!=0)   //if evalalution is not getting divided then return -1
         {
             return(-1);
         }
@@ -209,29 +257,53 @@ class FixEquation{
             return(-1);
         }
 
+        var index;
+        var strings_equal=true;
         for(var i=0;i<C.length;i++)
         {
+          if(C[i]!=ans1[i])
+          {
             if(C[i]=='?')
             {
-                return(ans1[i]-'0');
+              index=i;
             }
+            else
+            {
+              strings_equal=false;
+              break;
+            }
+          }
+
+        }
+        if(strings_equal==true)
+        {
+          for(var i=0;i<=index;i++)
+          {
+            if(i==index)
+            {
+              return(ans1[i]-'0');
+            }
+          }
+        }
+        else{
+          rteurn(-1);
         }
     }
-    else
+    else                                                           //if ? is present in D string
     {
         var A_int=0;
         var C_int=0;
         var B_int=0;
 
-        for(var i=0;i<A.length;i++)
+        for(var i=0;i<A.length;i++)                           //for converting string A to number
         {
             A_int=(A_int*10)+(A[i]-'0');
         }
-        for(var i=0;i<C.length;i++)
+        for(var i=0;i<C.length;i++)                           //for converting string C to number
         {
             C_int=(C_int*10)+(C[i]-'0');
         }
-        for(var i=0;i<B.length;i++)
+        for(var i=0;i<B.length;i++)                           //for converting string B to number
         {
             B_int=(B_int*10)+(B[i]-'0');
         }
@@ -248,12 +320,39 @@ class FixEquation{
             return(-1);
         }
 
+        var index=0;
+        var strings_equal=1;
         for(var i=0;i<D.length;i++)
         {
+          if(D[i]!=ans1[i])
+          {
             if(D[i]=='?')
             {
-                return(ans1[i]-'0');
+              index=i;
             }
+            else
+            {
+              strings_equal=0;
+              break;
+            }
+          }
+
+        }
+
+        if(strings_equal==1)
+        {
+          for(var i=0;i<=index;i++)
+          {
+            if(i==index)
+            {
+              return(ans1[i]-'0');
+            }
+          }
+        }
+        else
+        {
+
+          return(-1);
         }
     }
 
