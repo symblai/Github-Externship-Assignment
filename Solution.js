@@ -11,7 +11,7 @@ class FixEquation{
         let res
         const regex = /\?/
         if(regex.test(a)){
-            res = (+d-+2)/+b
+            res = (+d-+c)/+b
             return this.checkMissingValue(regex, res, a)
         } else if (regex.test(b)){
             res = ( +d - +c ) / +a
