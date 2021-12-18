@@ -50,7 +50,9 @@ class FixEquation {
       ans = numbers[0] * numbers[1] + numbers[2];
     }
     //return -1 if ans is float or negative
-    if (ans < 0) {
+    if (!Number.isInteger()) {
+      return -1;
+    } else if (ans < 0) {
       return -1;
     } else {
       ans = ans.toString();
