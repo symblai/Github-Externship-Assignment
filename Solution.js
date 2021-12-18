@@ -50,17 +50,19 @@ class FixEquation {
       ans = numbers[0] * numbers[1] + numbers[2];
     }
     //return -1 if ans is float or negative
-    if (!Number.isInteger()) {
-      return -1;
-    } else if (ans < 0) {
+    if (!Number.isInteger(ans) || ans < 0) {
       return -1;
     } else {
       ans = ans.toString();
-      return ans[quesPos];
+      //if questionmark is in place of leading zeros in a number
+      if (check.includes(ans)) {
+        return -1;
+      } else {
+        return ans[quesPos];
+      }
     }
   }
 }
-
 const readline = require("readline");
 var readInput = readline.createInterface({
   input: process.stdin,
