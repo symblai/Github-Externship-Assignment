@@ -39,7 +39,8 @@ class FixEquation {
       }
     }
 
-    //questionmark number is on position 0
+    //questionmark number is in A,B,C,D
+    //instead of if you can use switch also
     if (index === 0) {
       ans = (numbers[3] - numbers[2]) / numbers[1];
     } else if (index === 2) {
