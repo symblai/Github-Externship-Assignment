@@ -1,6 +1,9 @@
 // Write your code here
 class FixEquation{
-
+  let A;
+  let B;
+  let C;
+  let D;
   constructor(A,B,C,D)
   {
     this.A=A;
@@ -31,7 +34,7 @@ class FixEquation{
     }
     else if(B.indexOf("?"))
     {
-      b=(parseInt(D)-parseInt(C))/parseInt(A)
+      b=(parseInt(D)-parseInt(C))/parseInt(A);
       let x=b.toString();
       if(x.length!=B.length)
       {
