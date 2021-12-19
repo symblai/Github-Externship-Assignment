@@ -3,14 +3,15 @@ class FixEquation {
         for(let i = 0 ; i < 10 ; i++) {
 			let operands = equation.split(" "), flag = true;
 			for(let j = 0 ; j < operands.length ; j += 2) {
-			    if(operands[j].includes("?")) {
-			        let k = operands[j].indexOf("?"), str = operands[j];
-			        let temp = str.substring(0,k) + i + str.substring(k+1);
-			        if(temp[0] === '0' && temp.length > 1) {
-			            flag = false;
-			            break;   
-			        }
-			        operands[j] = temp;
+			    let temp = "";
+			    for(let k = 0 ; k < operands[j].length ; k++) {
+			        if(operands[j][k] === '?') temp += i;
+			        else temp += operands[j][k];
+			    }
+			    operands[j] = temp;
+			    if(temp[0] === '0' && temp.length > 1) {
+			        flag = false;
+			        break;
 			    }
 			}
 			if(flag && Number(operands[0])*Number(operands[2]) + Number(operands[4]) === Number(operands[6])) return i;

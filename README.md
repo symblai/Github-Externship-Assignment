@@ -7,66 +7,11 @@ One digit in the equation is missing. \
 Determine and return the correct digit. \
 If the missing digit cannot be determined (i.e., there is no solution or there is more than one solution), return `-1` instead.
 
-### Definition
+### Approach
 
-* **Class**: `FixEquation`
-* **Method** : `findMissingDigit`
-* **Parameters** : `String`
-* **Returns** : `Integer`
-* **Method signature** : `function findMissingDigit(equation)`
-
-
-> Note: A digit is correct if and only if it produces a valid equation in which A, B, C and D are positive integers with no leading zeros.
-
-### Constraints
-- Equation will have the form `A * B + C = D`.
-- Each of A, B, C, D will be a nonempty string of 1 to 4 characters, i.e., `1 <= length of A, B, C, D <= 4`.
-- Each character in each of A, B, C, D will be either a digit ('0'-'9') or a question mark ('?').
-- There will be exactly one question mark in equation.
-- The numbers represented by A, B, C, D will not have leading zeros.
-
-### Test Cases
-:one: 
-```
-Equation: 42 * 47 + 2 = 1?76
-
-Returns: 9
-
-We know that 42 * 47 + 2 = 1974, so the missing digit is 9.
-```
-
-:two:
-```
-Equation: 4? * 47 + 2 = 1976
-
-Returns: 2
-
-The same equation, another missing digit.
-```
-
-:three:
-```
-Equation: 42 * ?7 + 2 = 1976
-
-Returns: 4
-
-And again the same equation.
-```
-
-:four:
-```
-Equation: 42 * ?47 + 2 = 1976
-
-Returns: -1
-
-This test case has no valid solution. The numbers cannot have leading zeros, so we cannot fill in a zero in front of 47.
-```
-
-:five:
-```
-Equation: 2 * 12? + 2 = 247
-
-Returns: -1
-
-Two times something + 2 will never be 247, so this test case has no solution either.
-```
+1) The main idea is to run a loop for 10 times replacing the '?' with each digit between 0-9 and testing the equation's consistency.
+2) The given equation can be split into an array containing 6 elements A, *, B, +, C, =, D.
+Note: Elements at indices 1, 3, 5 are irrelevant to us.
+3) Next we find in the array the element with a '?' and replace it with the digit corresponding to the current iteration. For example, the number '1?76' will be '1076' in the first iteration, '1176' in the second iteration and so on until the appropriate digit is found.
+4) Everytime we replace the '?' with a digit we check whether there are any leading zeroes. This can be done by checking if the first element of the string is '0' and if its length is greater than 1. If there are leading zeroes, we just skip the current iteration.
+5) At each iteration, the equation A*B + C = D is verified until the correct digit is found. Else a '-1' is returned in the case when the equation has no solution.
