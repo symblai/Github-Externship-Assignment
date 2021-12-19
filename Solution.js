@@ -1,6 +1,7 @@
-let eq;
+
 class FixEqutaion
 {
+    let eq;
     
     constructor(eq)
     {
